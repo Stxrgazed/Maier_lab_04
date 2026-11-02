@@ -1,0 +1,28 @@
+def userInput():
+    while True:
+        try:
+            n = int(input("Enter a natural, even number, greater than 2: "))
+            
+            if n > 2 and n % 2 == 0:
+                return n
+            elif n % 2 != 0:
+                print("The number must be even")
+            else:
+                print("The number must be greater than 2")
+        except ValueError:
+            print("Invalid input, please enter an integer.")
+
+def isPrime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+def displayPairs(n):
+    for p in range(2, n):
+        q = n - p
+        if p <= q and isPrime(p) and isPrime(q):
+            print(p, "+", q)
+
+n = userInput()
+displayPairs(n)
