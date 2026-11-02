@@ -60,12 +60,13 @@ def additionRtoL(num1, num2):
         if len2 >= 0:
             dig2 = int(num2[len2])
 
-    total = dig1 + dig2 + carry
-    result = str(total % 10) + result
-    carry = total // 10
+        total = dig1 + dig2 + carry
+        result = str(total % 10) + result
+        carry = total // 10
 
-    len1 -= 1
-    len2 -= 1
+        len1 -= 1
+        len2 -= 1
+    return result.lstrip("0") or "0"
 
 def multiplyByDigit(num, dig):
     carry = 0
